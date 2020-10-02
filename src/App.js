@@ -28,6 +28,8 @@ class App extends Component {
         <ValidationComponent
         textLength={this.state.textLength}
         />
+
+        <CharComponent/>
         
         
         <ol>
