@@ -14,7 +14,6 @@ class App extends Component {
       text: event.target.value,
       textLength: event.target.value.length
     })
-    console.log(this.state)
   };
 
   
