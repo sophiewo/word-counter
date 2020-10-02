@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
+import ValidationComponent from './ValidationComp/ValidationComp';
 
 class App extends Component {
 
   state = {
-    paragraph: 'sophie' }
+    paragraph: 'placeholder',
+    paraLength:  11
+  }
 
   changeParaHandler = (event) => {
     this.setState( {
-      paragraph: event.target.value 
+      paragraph: event.target.value,
+      paraLength: event.target.value.length
     })
+    console.log(this.state)
   };
 
-
+   
 
   render() {
     return (
@@ -20,13 +25,11 @@ class App extends Component {
 
         <input type="text"  onChange={this.changeParaHandler} value={this.state.paragraph} />
 
-        <p>
-          word count:  {this.state.paragraph.length}
-        </p>
+        <ValidationComponent 
+        
+        />      
         
         
-
-
         <ol>
           <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
 
