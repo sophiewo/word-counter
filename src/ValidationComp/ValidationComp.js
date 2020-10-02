@@ -5,6 +5,7 @@ import React from 'react';
 const validationComponent = (prop) => {
   return (
     <div className="ValidationComp">
+      <p> The length of your text is: {prop.textLength} characters</p>
     </div>
   )
 }

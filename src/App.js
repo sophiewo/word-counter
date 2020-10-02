@@ -5,33 +5,33 @@ import ValidationComponent from './ValidationComp/ValidationComp';
 class App extends Component {
 
   state = {
-    paragraph: 'placeholder',
-    paraLength:  11
+    text: 'placeholder',
+    textLength:  11
   }
 
   changeParaHandler = (event) => {
     this.setState( {
-      paragraph: event.target.value,
-      paraLength: event.target.value.length
+      text: event.target.value,
+      textLength: event.target.value.length
     })
     console.log(this.state)
   };
 
-   
-
+  
   render() {
     return (
       <div className="App">
 
-        <input type="text"  onChange={this.changeParaHandler} value={this.state.paragraph} />
+        <input type="text"  onChange={this.changeParaHandler} value={this.state.text} />
 
-        <ValidationComponent 
-        
-        />      
+      {/* <p>{this.state.textLength} </p> */}
+        <ValidationComponent
+        textLength={this.state.textLength}
+        />
         
         
         <ol>
-          <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
+          <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a text).</li>
 
           <li>Create a new component (=> ValidationComponent) which receives the text length as a prop</li>
           <li>Inside the ValidationComponent, either output "Text too short" or "Text long enough" depending on the text length (e.g. take 5 as a minimum length)</li>
