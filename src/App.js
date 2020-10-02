@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ValidationComponent from './ValidationComp/ValidationComp';
+import CharComponent from './CharComp/CharComp';
 
 class App extends Component {
 
