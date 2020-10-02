@@ -6,17 +6,22 @@ class App extends Component {
   state = {
     paragraph: 'sophie' }
 
-  lengthChangeListener = () => {
-
+  changeParaHandler = (event) => {
+    this.setState( {
+      paragraph: event.target.value 
+    })
   };
+
+
 
   render() {
     return (
       <div className="App">
 
-        <input type="text"  name="name" value={this.state.paragraph} />
+        <input type="text"  onChange={this.changeParaHandler} value={this.state.paragraph} />
+
         <p>
-          {this.state.paragraph.length}
+          word count:  {this.state.paragraph.length}
         </p>
         
         
