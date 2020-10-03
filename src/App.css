@@ -8,10 +8,23 @@
 input[type=text] {
   width: 70%;
   opacity: 80%;
-  background-color: black;
-  color: white;
+  background-color: white;
+  border: 3px solid pink;
+  font: inherit;
+  color: pink;
   padding: 12px 20px;
   margin: 8px 0;
   border-radius: 4px;
   text-align: center;
+  cursor: text
 }
+
+button {
+  background-color: white;
+  font: 'inherit';
+  border: 3px solid pink;
+  padding: 8px;
+  margin: 50px;
+  color: pink;
+  cursor: pointer
+  }

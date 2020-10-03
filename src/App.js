@@ -7,7 +7,8 @@ class App extends Component {
 
   state = {
     text: 'placeholder',
-    textLength:  11
+    textLength:  11,
+    showInstructions: false
   }
 
   changeParaHandler = (event) => {
@@ -17,18 +18,15 @@ class App extends Component {
     })
   };
 
-  
+  toggleShowInstructions = () => {
+    const doesShow = this.state.showInstructions;
+    this.setState({ showInstructions: !doesShow})
+  }
+
   render() {
-    return (
-      <div className="App">
-        <input type="text"  onChange={this.changeParaHandler} value={this.state.text} />
 
-        <ValidationComponent
-          textLength={this.state.textLength} />
-
-        <CharComponent
-          text={this.state.text} />
-        
+    if (this.state.showInstructions === true) {
+      <div>
         <p> Requirements: </p>
         <ol>
           <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a text).</li>
@@ -38,7 +36,24 @@ class App extends Component {
           <li>Render a list of CharComponents where each CharComponent receives a different letter of the entered text (in the initial input field) as a prop.</li>
           <li>When you click a CharComponent, it should be removed from the entered text.</li>
         </ol>
-        <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
+      </div>
+    }
+
+    return (
+      <div className="App">
+        <h2> Enter some text below</h2>
+        <input type="text"  onChange={this.changeParaHandler} value={this.state.text} />
+
+        <ValidationComponent
+          textLength={this.state.textLength} />
+
+        <CharComponent
+          text={this.state.text} />
+        <button
+          onClick={this.toggleShowInstructions}>
+            Show Requirements
+          </button>
+       
       </div>
     );
   }
