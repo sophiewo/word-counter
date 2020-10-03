@@ -3,10 +3,10 @@ import React from 'react';
 const charComponent = (prop) => {
   const style = {
     display: 'inline-block', 
-    padding: '16px', 
-    textalign: 'center', 
-    margin: '16px', 
-    border: '1px solid black'
+    textalign: 'center',
+    padding: '10px',
+    margin: '10px', 
+    border: '2px solid black',
   }
 
 const array = prop.text.split('')
