@@ -9,11 +9,13 @@ const charComponent = (prop) => {
     border: '1px solid black'
   }
 
-
+const array = prop.text.split('')
 
   return (
-    <div style={style}>
-      {prop.text}
+    <div >
+      {array.map((char) => (
+        <div style={style}> {char} </div>
+      ))}
     </div>
   )
 }
