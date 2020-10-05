@@ -2,7 +2,7 @@
   font-family: 'Roboto', sans-serif;
   text-align: center;
   color: black;
-  background-image: none;
+  background-color: white;
 }
 
 input[type=text] {
@@ -24,7 +24,7 @@ button {
   font: 'inherit';
   border: 3px solid pink;
   padding: 8px;
-  margin: 50px;
+  margin: 30px;
   color: pink;
   cursor: pointer
   }
@@ -32,8 +32,22 @@ button {
   .Instructions {
     width: 70%;
     margin: auto;
-    border: 3px solid #eee;
+    border: 3px solid pink;
     box-shadow: 0 2px 3px #ccc;
     padding: 16px;
     text-align: left;
+  }
+
+  div {
+    background-color: white;
+  }
+
+  .instructionsBackground {
+    background-color: lightgray;
+    padding-bottom: 1000px
+  }
+
+
+  hr {
+     border: 2px solid pink
   }

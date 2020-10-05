@@ -6,8 +6,7 @@ import CharComponent from './CharComp/CharComp';
 class App extends Component {
 
   state = {
-    text: 'placeholder',
-    textLength:  11,
+    text: '',
     showInstructions: false
   }
 
@@ -24,7 +23,21 @@ class App extends Component {
     this.setState({ showInstructions: !doesShow})
   }
 
+  deleteCharHandler = (index) => {
+    const splitText = this.state.text.split('');
+    splitText.splice(index, 1);
+    const updatedText = splitText.join('');
+    this.setState({text: updatedText})
+  }
+
   render() {
+
+    const charList = this.state.text.split('').map((char, index) => {
+      return <CharComponent 
+        character={char} 
+        key={index} 
+        clicked={() =>this.deleteCharHandler(index)}/>
+    })
 
     let instructions = null;
 
@@ -57,17 +70,20 @@ class App extends Component {
       <div className="App">
         <h2> Enter some text below</h2>
         <input type="text"  onChange={this.changeParaHandler} value={this.state.text} />
-
+        <p> {this.state.text} </p>
         <ValidationComponent
-          textLength={this.state.textLength} />
-
-        <CharComponent
-          text={this.state.text} />
+          textLength={this.state.text.length} />
+        {charList}
+        <div className="instructionsBackground">
+        <hr />
         <button
           onClick={this.toggleShowInstructions}>
-            Show Requirements
-          </button>
-       {instructions}
+       
+          Show Requirements
+        </button>
+     
+        {instructions}
+      </div>
       </div>
     );
   }

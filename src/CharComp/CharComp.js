@@ -1,6 +1,6 @@
 import React from 'react';
 
-const charComponent = (prop) => {
+const charComponent = (props) => {
   const style = {
     display: 'inline-block', 
     textalign: 'center',
@@ -9,14 +9,12 @@ const charComponent = (prop) => {
     border: '2px solid black',
   }
 
-const array = prop.text.split('')
 
   return (
-    <div >
-      {array.map((char) => (
-        <div style={style}> {char} </div>
-      ))}
+    <div style={style} onClick={props.clicked}> 
+      {props.character} 
     </div>
+
   )
 }
 
