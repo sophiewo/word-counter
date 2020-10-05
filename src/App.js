@@ -20,14 +20,18 @@ class App extends Component {
 
   toggleShowInstructions = () => {
     const doesShow = this.state.showInstructions;
+    console.log(doesShow)
     this.setState({ showInstructions: !doesShow})
   }
 
   render() {
 
+    let instructions = null;
+
     if (this.state.showInstructions === true) {
-      <div>
-        <p> Requirements: </p>
+      instructions = (
+      <div className="Instructions" >
+        <h2> Requirements: </h2>
         <ol>
           <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a text).</li>
           <li>Create a new component (=> ValidationComponent) which receives the text length as a prop</li>
@@ -36,8 +40,18 @@ class App extends Component {
           <li>Render a list of CharComponents where each CharComponent receives a different letter of the entered text (in the initial input field) as a prop.</li>
           <li>When you click a CharComponent, it should be removed from the entered text.</li>
         </ol>
+
+        <h3>Extras: </h3>
+          <ol>
+            <li> Character length only appears on typing in the input box</li>
+            <li> Show Requirement's button changes to hide Requirements on toggle</li>
+            <li> Styling for list, place on card </li>
+          </ol>
       </div>
+      )
     }
+
+  
 
     return (
       <div className="App">
@@ -53,7 +67,7 @@ class App extends Component {
           onClick={this.toggleShowInstructions}>
             Show Requirements
           </button>
-       
+       {instructions}
       </div>
     );
   }

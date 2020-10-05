@@ -28,3 +28,12 @@ button {
   color: pink;
   cursor: pointer
   }
+
+  .Instructions {
+    width: 70%;
+    margin: auto;
+    border: 3px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    text-align: left;
+  }
