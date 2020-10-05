@@ -6,8 +6,8 @@ import CharComponent from './CharComp/CharComp';
 class App extends Component {
 
   state = {
-    text: 'placeholder',
-    textLength:  11,
+    text: '',
+    textLength:  0,
     showInstructions: false
   }
 
@@ -25,6 +25,11 @@ class App extends Component {
   }
 
   render() {
+
+    const charList = this.state.text.split('').map((char, index) => {
+      return <CharComponent character={char} key={index} />
+    })
+
 
     let instructions = null;
 
@@ -60,9 +65,7 @@ class App extends Component {
 
         <ValidationComponent
           textLength={this.state.textLength} />
-
-        <CharComponent
-          text={this.state.text} />
+        {charList}
         <button
           onClick={this.toggleShowInstructions}>
             Show Requirements
