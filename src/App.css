@@ -1,3 +1,39 @@
 .App {
-  margin: 16px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: black;
+  background-image: none;
 }
+
+input[type=text] {
+  width: 70%;
+  opacity: 80%;
+  background-color: white;
+  border: 3px solid pink;
+  font: inherit;
+  color: pink;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  text-align: center;
+  cursor: text
+}
+
+button {
+  background-color: white;
+  font: 'inherit';
+  border: 3px solid pink;
+  padding: 8px;
+  margin: 50px;
+  color: pink;
+  cursor: pointer
+  }
+
+  .Instructions {
+    width: 70%;
+    margin: auto;
+    border: 3px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    text-align: left;
+  }
