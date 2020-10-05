@@ -32,10 +32,6 @@ class App extends Component {
     this.setState({text: updatedText})
   }
 
-  showDeleteCharMessage = (event) => {
-
-  }
-
   render() {
 
     const charList = this.state.text.split('').map((char, index) => {
@@ -94,7 +90,6 @@ class App extends Component {
           onClick={this.toggleShowInstructions}>
             {buttonText}
         </button>
-     
         {instructions}
       </div>
       </div>
