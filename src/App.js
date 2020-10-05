@@ -7,7 +7,7 @@ class App extends Component {
 
   state = {
     text: '',
-    showInstructions: false
+    showInstructions: false,
   }
 
   changeParaHandler = (event) => {
@@ -15,12 +15,14 @@ class App extends Component {
       text: event.target.value,
       textLength: event.target.value.length
     })
+    
   };
 
   toggleShowInstructions = () => {
     const doesShow = this.state.showInstructions;
     console.log(doesShow)
-    this.setState({ showInstructions: !doesShow})
+    this.setState({ showInstructions: !doesShow })
+
   }
 
   deleteCharHandler = (index) => {
@@ -28,6 +30,10 @@ class App extends Component {
     splitText.splice(index, 1);
     const updatedText = splitText.join('');
     this.setState({text: updatedText})
+  }
+
+  showDeleteCharMessage = (event) => {
+
   }
 
   render() {
@@ -40,8 +46,10 @@ class App extends Component {
     })
 
     let instructions = null;
+    let buttonText = "Show Instructions"
 
     if (this.state.showInstructions === true) {
+      buttonText = "Hide Instructions"
       instructions = (
       <div className="Instructions" >
         <h2> Requirements: </h2>
@@ -61,25 +69,30 @@ class App extends Component {
             <li> Styling for list, place on card </li>
           </ol>
       </div>
+      
       )
     }
 
-  
+    let deleteText = null
+    if (this.state.text !== '') {
+      deleteText = "Click a character to delete it"
+    }
 
     return (
       <div className="App">
         <h2> Enter some text below</h2>
-        <input type="text"  onChange={this.changeParaHandler} value={this.state.text} />
-        <p> {this.state.text} </p>
+        <input type="text"  
+          onChange={this.changeParaHandler} 
+          value={this.state.text} />
         <ValidationComponent
           textLength={this.state.text.length} />
         {charList}
+        <p>{deleteText}</p>
         <div className="instructionsBackground">
         <hr />
         <button
           onClick={this.toggleShowInstructions}>
-       
-          Show Requirements
+            {buttonText}
         </button>
      
         {instructions}
